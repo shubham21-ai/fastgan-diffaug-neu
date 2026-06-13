@@ -66,6 +66,7 @@ import glob
 KAGGLE_INPUT = "/kaggle/input"
 candidates = glob.glob(f"{KAGGLE_INPUT}/**/NEU_data", recursive=True) + \\
              glob.glob(f"{KAGGLE_INPUT}/**/images", recursive=True) + \\
+             glob.glob(f"{KAGGLE_INPUT}/**/*.jpg", recursive=True) + \\
              glob.glob(f"{KAGGLE_INPUT}/**/*.bmp", recursive=True)
 
 if candidates:
@@ -135,6 +136,7 @@ for root, dirs, files in os.walk(DATA_ROOT):
         print(f"{indent}  └── {len(imgs)} images")
 
 print()
+print(f"Total JPG files: {len(glob.glob(DATA_ROOT + '/**/*.jpg', recursive=True))}")
 print(f"Total BMP files: {len(glob.glob(DATA_ROOT + '/**/*.bmp', recursive=True))}")
 """
 
