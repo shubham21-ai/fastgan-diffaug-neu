@@ -261,7 +261,7 @@ def find_dataset_root(base: str | Path) -> Path:
                 if any(f.suffix.lower() in _IMAGE_EXTS for f in d.iterdir()
                        if f.is_file())
             ]
-            if len(valid_sub) >= 2:
+            if len(valid_sub) >= 1:
                 print(f"[Dataset] Auto-detected root: {cand}")
                 return cand
             next_candidates.extend(subdirs)
