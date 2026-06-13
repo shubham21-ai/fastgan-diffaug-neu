@@ -12,7 +12,7 @@ HOW TO USE ON KAGGLE
 2. Add the NEU Surface Defect Database as input dataset:
    https://www.kaggle.com/datasets/kaustubhdikshit/neu-surface-defect-database
 3. Upload this entire repo as a second input dataset, OR run:
-       !git clone https://github.com/YOUR_USERNAME/fast_gan_diffAug /kaggle/working/fast_gan_diffAug
+       !git clone https://github.com/shubham21-ai/fastgan-diffaug-neu.git /kaggle/working/fastgan-diffaug-neu
 4. Copy each CELL below into separate notebook cells
 5. Run cells sequentially
 
@@ -80,7 +80,7 @@ else:
     print(f"Using manual path: {DATA_ROOT}")
 
 SAVE_DIR = "/kaggle/working"
-REPO_DIR = "/kaggle/working/fast_gan_diffAug"
+REPO_DIR = "/kaggle/working/fastgan-diffaug-neu"
 
 print(f"Save dir:  {SAVE_DIR}")
 print(f"Repo dir:  {REPO_DIR}")
@@ -93,13 +93,13 @@ print(f"Repo dir:  {REPO_DIR}")
 CELL_3 = """
 import subprocess, os
 
-REPO_DIR = "/kaggle/working/fast_gan_diffAug"
+REPO_DIR = "/kaggle/working/fastgan-diffaug-neu"
 
 if not os.path.exists(REPO_DIR):
     # Replace with your actual GitHub URL after pushing the code
     subprocess.run([
         "git", "clone",
-        "https://github.com/YOUR_USERNAME/fast_gan_diffAug.git",
+        "https://github.com/shubham21-ai/fastgan-diffaug-neu.git",
         REPO_DIR
     ], check=True)
     print(f"Cloned repo to {REPO_DIR}")
@@ -144,7 +144,7 @@ print(f"Total BMP files: {len(glob.glob(DATA_ROOT + '/**/*.bmp', recursive=True)
 
 CELL_5 = """
 import sys
-sys.path.insert(0, "/kaggle/working/fast_gan_diffAug")
+sys.path.insert(0, "/kaggle/working/fastgan-diffaug-neu")
 
 import torch
 from models import Generator, Discriminator
@@ -183,12 +183,12 @@ print("Smoke test passed!")
 
 CELL_6 = """
 import sys, os
-sys.path.insert(0, "/kaggle/working/fast_gan_diffAug")
+sys.path.insert(0, "/kaggle/working/fastgan-diffaug-neu")
 
 import yaml
 
 # Load config and override paths for Kaggle
-with open("/kaggle/working/fast_gan_diffAug/configs/neu_det_128.yaml") as f:
+with open("/kaggle/working/fastgan-diffaug-neu/configs/neu_det_128.yaml") as f:
     cfg = yaml.safe_load(f)
 
 # ── Override these two paths for Kaggle ──
@@ -216,7 +216,7 @@ train(cfg)
 
 CELL_7 = """
 import sys, os, glob
-sys.path.insert(0, "/kaggle/working/fast_gan_diffAug")
+sys.path.insert(0, "/kaggle/working/fastgan-diffaug-neu")
 
 from generate import generate
 from pathlib import Path
@@ -263,7 +263,7 @@ print("Preview saved to /kaggle/working/synthetic_preview.png")
 
 CELL_8 = """
 import sys
-sys.path.insert(0, "/kaggle/working/fast_gan_diffAug")
+sys.path.insert(0, "/kaggle/working/fastgan-diffaug-neu")
 
 from evaluate import compute_fid
 
