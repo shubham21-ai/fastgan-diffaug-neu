@@ -254,11 +254,11 @@ def train(cfg: dict) -> None:
 
                 d_real_loss = hinge_loss_real(pred_real)
 
-                # Resize real to match decoder output sizes
-                real_128  = F.interpolate(real, rec_full.shape[2:],  mode='bilinear', align_corners=False)
-                real_32   = F.interpolate(real, rec_small.shape[2:], mode='bilinear', align_corners=False)
+                # Resize real_aug to match decoder output sizes
+                real_128  = F.interpolate(real_aug, rec_full.shape[2:],  mode='bilinear', align_corners=False)
+                real_32   = F.interpolate(real_aug, rec_small.shape[2:], mode='bilinear', align_corners=False)
                 real_crop = F.interpolate(
-                    crop_quadrant(real, part), rec_part.shape[2:],
+                    crop_quadrant(real_aug, part), rec_part.shape[2:],
                     mode='bilinear', align_corners=False
                 )
 
