@@ -31,8 +31,8 @@ A side-by-side visual comparison showcases the model's ability to replicate the 
 
 ![Comparison Cr](comparison_Cr.png)
 
-## What's Next
-- *Pre-trained model weights for the `Cr` class and other defect types will be uploaded shortly.*
+## Model Weights
+- *The pre-trained model weights (`fast_gan.pt`) exceed GitHub's standard file size limits and are available upon request or hosted on an external platform.*
 
 ## Structure
 - `fastgan_diffaug_neu.ipynb`: The main notebook containing the full training pipeline, augmentation logic, and evaluation steps.
